@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+  --primery-color: rgb(3, 2, 39);
+  --neon-glow: rgba(3, 2, 39, 0.7); /* mesmo tom, com transparência */
+}
+
+* {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--primery-color);
+  font-family: 'open sans', sans-serif;
+  color: rgb(241, 231, 231);
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 640px;
+  height: auto;
+  margin: 100px auto;
+  padding: 100px;
+  background: #cbd3dc61;
+  border-radius: 10px;
+  text-align: center;
+  gap: 20px; /* Adiciona espaçamento entre os elementos */
+}
+.radio-group{
+ 
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  width: auto;
+
+}
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+/* Inputs, labels e botões */
+form input,
+form label,
+form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+form input {
+  font-size: 24px;
+  height: 50px;
+  padding: 0 10px;
+}
+
+form button {
+  font-size: 24px;
+  height: 50px;
+  background: #23747e;
+  color: antiquewhite;
+  border: none;
+  cursor: pointer;
+  margin-top: 30px;
+  border-radius: 10px;
+}
+
+form button:hover {
+  background: var(--primery-color);
+}
+
+form button:active {
+  background: #879da0;
+}
+
+/* === RESPONSIVO === */
+
+/* Para telas até 768px (tablets e celulares grandes) */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.1em;
+  }
+
+  .container {
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 50px 20px;
+  }
+
+  form input,
+  form button {
+    font-size: 20px;
+    height: 45px;
+  }
+}
+
+/* Para telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+  body {
+    font-size: 1em;
+  }
+
+  .container {
+    padding: 30px 15px;
+    margin: 30px auto;
+  }
+
+  form input,
+  form button {
+    font-size: 18px;
+    height: 40px;
+  }
+}
