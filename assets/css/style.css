@@ -81,6 +81,25 @@ form button:active {
   background: #879da0;
 }
 
+
+/* ... seu CSS anterior ... */
+
+.paragrafo-resultado {
+  /* Removida a cor de fundo fixa daqui */
+  padding: 10px 20px; /* Corrigido de 20pxS para 20px */
+  border-radius: 5px; /* Adicionei um border-radius para combinar com o visual */
+  /* Você pode adicionar outras estilizações aqui que são comuns a todos os resultados */
+}
+
+.bad {
+  background: rgb(255, 150, 150); /* Cor vermelha para erros */
+  color: #333; /* Cor do texto para erros, para contraste */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+
+
 /* === RESPONSIVO === */
 
 /* Para telas até 768px (tablets e celulares grandes) */
@@ -101,6 +120,7 @@ form button:active {
     height: 45px;
   }
 }
+
 
 /* Para telas até 480px (celulares pequenos) */
 @media (max-width: 480px) {
