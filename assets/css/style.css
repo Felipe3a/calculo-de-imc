@@ -1,8 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-  --primery-color: rgb(3, 2, 39);
+  --primery-color: rgba(3, 2, 39, 0.328);
   --neon-glow: rgba(3, 2, 39, 0.7); /* mesmo tom, com transparência */
+  --aqua-color: rgba(0, 255, 255, 0.1); /* cor aqua com transparência */
+    /* Variáveis para a cor base e opacidade do vidro */
+  --cor-vidro-base: 255, 255, 255; /* RGB para branco */
+  --opacidade-vidro: 0.5; /* 20% de opacidade */
+
+  /* Variável para a intensidade do desfoque */
+  --desfoque-vidro: 10px;
+
+  /* Variável para a cor da borda do vidro (opcional) */
+  --borda-vidro-cor: 255, 255, 255; /* RGB para branco */
+  --borda-vidro-opacidade: 0.5; /* 30% de opacidade */
+  
 }
 
 * {
@@ -14,10 +26,19 @@
 }
 
 body {
-  background: var(--primery-color);
+  background: url(/close-up-de-fita-metrica.jpg) ;
+  background-size: cover;
+background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;  
+  
+
+
+
   font-family: 'open sans', sans-serif;
-  color: rgb(241, 231, 231);
-  font-size: 1.3em;
+  color: white ;
+  text-shadow:4px 4px 4px rgb(0, 0, 0) ;
+  font-size: 1.5em;
   line-height: 1.5em;
 }
 
@@ -30,10 +51,14 @@ body {
   height: auto;
   margin: 100px auto;
   padding: 100px;
-  background: #cbd3dc61;
+ background-color: rgba(var(--cor-vidro-base), var(--opacidade-vidro));
+  backdrop-filter: blur(var(--desfoque-vidro));
+  -webkit-backdrop-filter: blur(var(--desfoque-vidro)); /* Para compatibilidade */
+  border: 1px solid rgba(var(--borda-vidro-cor), var(--borda-vidro-opacidade));
   border-radius: 10px;
   text-align: center;
   gap: 20px; /* Adiciona espaçamento entre os elementos */
+
 }
 .radio-group{
  
@@ -60,13 +85,14 @@ form input {
   font-size: 24px;
   height: 50px;
   padding: 0 10px;
+  opacity: 0.4; /* Opacidade reduzida */
 }
 
 form button {
   font-size: 24px;
   height: 50px;
-  background: #23747e;
-  color: antiquewhite;
+  background: #23737ec7;
+  color: rgb(255, 255, 255);
   border: none;
   cursor: pointer;
   margin-top: 30px;
@@ -89,11 +115,12 @@ form button:active {
   padding: 10px 20px; /* Corrigido de 20pxS para 20px */
   border-radius: 5px; /* Adicionei um border-radius para combinar com o visual */
   /* Você pode adicionar outras estilizações aqui que são comuns a todos os resultados */
+  color: white;
 }
 
 .bad {
   background: rgb(255, 150, 150); /* Cor vermelha para erros */
-  color: #333; /* Cor do texto para erros, para contraste */
+  color: #efebeb; /* Cor do texto para erros, para contraste */
   padding: 10px 20px;
   border-radius: 5px;
 }

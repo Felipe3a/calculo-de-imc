@@ -65,7 +65,7 @@ function getNivelImc(imc, genero) {
         // Mantendo suas faixas originais para mulheres
         if (imc < 19) {
             nivel = "Abaixo do peso";
-            corFundo = "red";
+            corFundo = "";
         } else if (imc >= 19 && imc <= 24.5) {
             nivel = "Peso normal";
             corFundo = "green";
@@ -75,7 +75,7 @@ function getNivelImc(imc, genero) {
         } else {
             // imc > 29
             nivel = "Obesidade"; // Sua categoria única para obesidade feminina
-            corFundo = "red";
+            corFundo = "bad";
         }
     }
     return { nivel, corFundo }; // Retorna um objeto com ambos os valores
@@ -100,11 +100,11 @@ function setResultado(msg, isValid, bgColor) {
     if (isValid) {
         p.classList.add("paragrafo-resultado"); // Classe para resultados de sucesso
         p.style.background = bgColor; // <<< AQUI: Aplica a cor de fundo ao PARÁGRAFO (p), não à div pai
-        p.style.color = 'black'; // Sugestão: para garantir a legibilidade do texto
+        p.style.color = 'white'; // Sugestão: para garantir a legibilidade do texto
     } else {
         p.classList.add("bad"); // Classe para mensagens de erro
         // A cor de fundo para .bad já está no CSS, então não precisamos setar aqui
-        p.style.color = 'black'; // Sugestão: Cor do texto para erros, se o fundo for claro
+        p.style.color = 'white'; // Sugestão: Cor do texto para erros, se o fundo for claro
     }
 
     p.innerHTML = msg;
